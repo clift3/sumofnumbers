@@ -16,19 +16,19 @@ function sumWhile(list) {
   return sum;
 }
 
-function sumRecursion(list, index) {
-  if (index >= list.length) {
+function sumRecursion(list) {
+  if (list.length <= 0) {
     return 0;
   }
-  return list[index] + sumRecursion(list, index + 1);
+  return list[0] + sumRecursion(list.slice(1, list.length));
 }
 
 function sumTheSimpleWay(list) {
   return _.reduce(list, (memo, num) => memo + num, 0);
 }
 
-const list = [1, 2, 3, 4, 5];
-console.log(sumFor(list));
-console.log(sumWhile(list));
-console.log(sumRecursion(list));
-console.log(sumTheSimpleWay(list));
+const testlist = [1, 2, 3, 4, 5];
+console.log(sumFor(testlist));
+console.log(sumWhile(testlist));
+console.log(sumRecursion(testlist));
+console.log(sumTheSimpleWay(testlist));
